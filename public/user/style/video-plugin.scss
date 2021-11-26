@@ -1,0 +1,332 @@
+.video-plugin {
+  /* ==========================================================================
+     $Variables
+     ========================================================================== */
+
+  /* $Fonts
+     ========================================================================== */
+
+
+  /* $Colors
+     ========================================================================== */
+  $green:						#FFCC53;
+  $dark-red:					#291720;
+  $gray:						#DEDFDF;
+
+  $color-primary:				$green;
+  $color-primary--light:		tint($green, 6%);
+  $color-primary--dark:		shade($green, 10%);
+
+  $color-accent:				$dark-red;
+  $color-accent--light:		tint($dark-red, 6%);
+  $color-accent--dark:		shade($dark-red, 10%);
+  $color-accent--darker:		shade($dark-red, 20%);
+
+  $color-secondary:			$gray;
+  $color-secondary--light:	tint($gray, 6%);
+  $color-secondary--lighter:	tint($gray, 12%);
+  $color-secondary--dark:		shade($gray, 10%);
+
+  $popup-text: 				#1a1b1b;
+
+
+  /* $Radius
+     ========================================================================== */
+  $radius: 7px;
+
+  /* $Easing
+     ========================================================================== */
+
+  // easeInBack & easeOutBack
+  $ease-in:		cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  $ease-out:		cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+
+  /* ==========================================================================
+     $Mixins
+     ========================================================================== */
+  @mixin active {
+
+    &:active,
+    &:focus,
+    &:hover { @content; }
+
+  }
+
+
+
+  /* ==========================================================================
+     $Globals
+     ========================================================================== */
+  html { box-sizing: border-box; }
+
+  *,
+  *:before,
+  *:after { box-sizing: inherit; }
+
+  body {
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .wrap {
+    width: 100%;
+  }
+
+  iframe { border: 0; }
+
+
+  :focus { outline-color: $color-primary; }
+
+
+
+
+  /* ==========================================================================
+     $Buttons
+     ========================================================================== */
+
+
+
+
+
+
+  /* ==========================================================================
+     $Flexible Media
+     ========================================================================== */
+  .flex-media {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+
+    iframe,
+    object {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+  }
+
+
+
+
+  /* ==========================================================================
+     $Media Object
+     ========================================================================== */
+  .media,
+  .media-body { overflow: hidden;     position: relative; float: left;   margin-bottom: 5px; }
+
+  .media-left {
+
+    .media-img {
+      float: left;
+    }
+  }
+
+  .media-right {
+
+    .media-img {
+      float: right;
+      margin-left: 1.277em;
+    }
+
+  }
+
+  .media-img img {
+    max-width: 280px;
+    width: 100%;
+    margin: 0 auto;}
+
+
+
+
+  /* ==========================================================================
+     $Magnific Popup (lightbox)
+     ========================================================================== */
+  .popup {
+    background-color: #fff;
+    color: $popup-text;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+  }
+
+  .mfp-close {
+    color: $color-secondary;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  /* $Interactive Stuff
+     ========================================================================== */
+
+  // Setup
+  .mfp-active {
+
+    &.mfp-bg {
+      opacity: 0;
+      transition: opacity 0.2s $ease-in;
+    }
+
+    .mfp-content {
+      transition: all 0.24s;
+      transform: translateY(15%);
+      opacity: 0;
+    }
+
+  }
+
+  // Lightbox In
+  .mfp-ready {
+
+    &.mfp-bg { opacity: 0.85; }
+
+    .mfp-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+  }
+
+  // Lightbox Out
+  .mfp-removing {
+
+    &.mfp-bg { opacity: 0; }
+
+    .mfp-content {
+      opacity: 0;
+      transform: translateY(15%);
+      transition-timing-function: $ease-out;
+    }
+
+  }
+
+
+
+
+
+  /* ==========================================================================
+     $Gallery
+     ========================================================================== */
+  .gallery-items {
+    padding: 0 0 0 10px;
+
+    .gallery-item:first-child {
+      .media-img {
+        border-top-right-radius: 8px;
+        img {
+          border-top-right-radius: 8px;
+        }
+      }
+    }
+
+    .gallery-item:last-child {
+      .media-img {
+        border-bottom-right-radius: 8px;
+        img {
+          border-bottom-right-radius: 8px;
+        }
+      }
+    }
+  }
+
+  .gallery-title {
+    border-top: 1px solid $color-secondary;
+    border-bottom: 1px solid $color-secondary;
+    font-weight: 700;
+    overflow: hidden;
+  }
+
+  .gallery-item {
+    transition: background 0.25s;
+
+    @include active {
+      background-color: $color-secondary--lighter;
+    }
+
+  }
+
+
+  .gallery-item-desc {
+    font-size: 77%;
+    transition: color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    color: #fff;
+
+    &:after {
+      content: 'Playing';
+      display: block;
+      font-size: 80%;
+      letter-spacing: 1px;
+      speak: none;
+      opacity: 0;
+      text-transform: uppercase;
+      transform: translateY(100%);
+      transition: all 0.2s $ease-out;
+    }
+
+  }
+
+  .active .gallery-item-desc {
+    color: $color-primary;
+    transition-timing-function: $ease-in;
+
+    &:after {
+      opacity: 1;
+      transform: translateY(0);
+      transition-timing-function: $ease-in;
+      speak: normal;
+    }
+
+  }
+
+  .gallery-main {
+    float: left;
+    width: 76%;
+  }
+
+  .gallery-items {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 23%;
+    margin-bottom: 0;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 767px){
+        .gallery-main {
+          float: left;
+          width: 70%;
+        }
+        .gallery-items {
+          width: 30%;
+
+        }
+      }
+
+}
+
+
+

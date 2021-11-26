@@ -1,0 +1,64 @@
+{
+  "menu": [
+    {
+      "url": "/admin",
+      "name": "dashboard",
+      "icon": "feather icon-home"
+    },
+    {
+      "url": "/admin/users",
+      "name": "user-manager",
+      "icon": "feather icon-user"
+    },
+    {
+      "url": "",
+      "name": "article-manager",
+      "icon": "feather icon-zap",
+      "submenu": [
+        {
+          "url": "/admin/articles",
+          "name": "articles",
+          "i18n": "articles"
+        },
+        {
+          "url": "/admin/articles/tags",
+          "name": "tags",
+          "i18n": "tags"
+        }
+      ]
+    },
+
+    {
+      "url": "",
+      "name": "country-manager",
+      "icon": "fa fa-globe",
+      "submenu": [
+        {
+          "url": "/admin/countries",
+          "name": "countries",
+          "i18n": "countries"
+        },
+        {
+          "url": "/admin/countries/itineraries",
+          "name": "itineraries",
+          "i18n": "itineraries"
+        },
+        {
+          "url": "/admin/countries/places",
+          "name": "places",
+          "i18n": "places"
+        },
+        {
+          "url": "/admin/countries/experiences",
+          "name": "experiences",
+          "i18n": "experiences"
+        }
+      ]
+    },
+    {
+      "url": "/admin/settings",
+      "name": "setting-manager",
+      "icon": "feather icon-settings"
+    }
+  ]
+}

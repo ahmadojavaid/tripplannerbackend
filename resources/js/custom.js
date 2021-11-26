@@ -1,0 +1,6 @@
+/**
+ *
+ * Custom files
+ */
+
+require("croppie");

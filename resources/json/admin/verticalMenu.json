@@ -1,0 +1,108 @@
+{
+  "menu": [
+    {
+      "url": "/admin",
+      "name": "dashboard",
+      "icon": "feather icon-home"
+    },
+    {
+      "url": "/admin/users",
+      "name": "user-manager",
+      "icon": "feather icon-user"
+    },
+    {
+      "url": "/admin/articles",
+      "name": "article-manager",
+      "icon": "feather icon-zap"
+    },
+    {
+      "url": "",
+      "name": "country-manager",
+      "icon": "fa fa-globe",
+      "submenu": [
+        {
+          "url": "/admin/countries",
+          "name": "countries",
+          "i18n": "countries"
+        },
+        {
+          "url": "/admin/countries/places",
+          "name": "places",
+          "i18n": "places"
+        },
+        {
+          "url": "/admin/countries/itineraries",
+          "name": "itineraries",
+          "i18n": "itineraries"
+        }
+      ]
+    },
+    {
+      "url": "",
+      "name": "experience-manager",
+      "icon": "fa fa-globe",
+      "submenu": [
+        {
+          "url": "/admin/experiences/categories",
+          "name": "experience-categories",
+          "i18n": "experience-categories"
+        },
+        {
+          "url": "/admin/experiences",
+          "name": "experiences",
+          "i18n": "experiences"
+        }
+      ]
+    },
+    {
+      "url": "",
+      "name": "property-manager",
+      "icon": "fa fa-globe",
+      "submenu": [
+        {
+          "url": "/admin/properties/types",
+          "name": "property-types",
+          "i18n": "property-types"
+        },
+        {
+          "url": "/admin/properties/categories",
+          "name": "property-categories",
+          "i18n": "property-categories"
+        },
+        {
+          "url": "/admin/properties",
+          "name": "properties",
+          "i18n": "properties"
+        }
+      ]
+    },
+    {
+      "url": "",
+      "name": "trip-manager",
+      "icon": "fa fa-globe",
+      "submenu": [
+        {
+          "url": "/admin/trips",
+          "name": "trips",
+          "i18n": "trips"
+        },
+        {
+          "url": "/admin/trips/routes",
+          "name": "routes",
+          "i18n": "routes"
+        }
+      ]
+    },
+
+    {
+      "url": "/admin/settings",
+      "name": "setting-manager",
+      "icon": "feather icon-settings"
+    },
+    {
+      "url": "/admin/enquires",
+      "name": "enquire-manager",
+      "icon": "feather icon-settings"
+    }
+  ]
+}

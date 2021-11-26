@@ -1,0 +1,13 @@
+{
+  "menu": [{
+      "url": "/admin",
+      "name": "dashboard",
+      "icon": "feather icon-home"
+    },
+    {
+      "url": "/admin/articles",
+      "name": "article-manager",
+      "icon": "feather icon-zap"
+    }
+  ]
+}
